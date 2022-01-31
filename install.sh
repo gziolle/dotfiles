@@ -10,20 +10,20 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)”;
 
 # export homebrew env var
-echo "export PATH=/opt/homebrew/bin:$PATH" >> ~/.zshrc
-source ~/.zshrc
+echo "export PATH=/opt/homebrew/bin:$PATH" >> ~/.zshrc;
+source ~/.zshrc;
 
 # install neovim
-brew install neovim
+brew install neovim;
 
 # install java
-brew install openjdk@11
+brew install openjdk@11;
 
 #symlink system wrappers to java
-sudo ln -sfn /opt/homebrew/opt/openjdk@11/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-11.jdk
+sudo ln -sfn /opt/homebrew/opt/openjdk@11/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-11.jdk;
 
 # export java to PATH
-echo 'export PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"' >> ~/.zshrc
+echo 'export PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"' >> ~/.zshrc;
 
 # install dev apps
 brew install --cask visual-studio-code flipper android-studio postman stats rectangle spotify firefox slack zoom;
@@ -32,8 +32,8 @@ brew install --cask visual-studio-code flipper android-studio postman stats rect
 brew install watchman;
 
 # install nvm
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
-source ~/.zshrc
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash;
+source ~/.zshrc;
 
 # nvm - install versions
 nvm install lts;
@@ -48,7 +48,7 @@ echo "export "HOME/.rvm/bin:$PATH"" >> ~/.zshrc;
 source ~/.zshrc;
 
 # export necessary flags
-export warnflags=-Wno-error=implicit-function-declaration
+export warnflags=-Wno-error=implicit-function-declaration;
 
 # rvm install ruby-2.6.5
 rvm install --default 2.6.5;
