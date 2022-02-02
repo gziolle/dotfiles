@@ -13,24 +13,6 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 echo "export PATH=/opt/homebrew/bin:$PATH" >> ~/.zshrc;
 source ~/.zshrc;
 
-# install neovim
-brew install neovim;
-
-# install java
-brew install openjdk@11;
-
-#symlink system wrappers to java
-sudo ln -sfn /opt/homebrew/opt/openjdk@11/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-11.jdk;
-
-# export java to PATH
-echo 'export PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"' >> ~/.zshrc;
-
-# install dev apps
-brew install --cask visual-studio-code flipper android-studio postman stats rectangle spotify firefox slack zoom;
-
-# install watchman
-brew install watchman;
-
 # install nvm
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash;
 source ~/.zshrc;
@@ -52,3 +34,19 @@ export warnflags=-Wno-error=implicit-function-declaration;
 
 # rvm install ruby-2.6.5
 rvm install --default 2.6.5;
+
+# install java
+brew install openjdk@11;
+
+#symlink system wrappers to java
+sudo ln -sfn /opt/homebrew/opt/openjdk@11/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-11.jdk;
+
+# export java to PATH
+echo 'export PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"' >> ~/.zshrc;
+
+# install apps
+brew install neovim postman watchmam;
+
+# install casks
+brew install --cask visual-studio-code flipper android-studio postman stats rectangle spotify firefox slack zoom dbeaver;
+
