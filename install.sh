@@ -48,5 +48,5 @@ echo 'export PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"' >> ~/.zshrc;
 brew install neovim postman watchmam;
 
 # install casks
-brew install --cask visual-studio-code flipper android-studio postman stats rectangle spotify firefox slack zoom dbeaver;
+brew install --cask visual-studio-code flipper android-studio postman stats rectangle spotify slack zoom dbeaver google-chrome;
 
