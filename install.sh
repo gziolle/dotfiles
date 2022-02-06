@@ -1,52 +1,52 @@
 #!/bin/zsh
 
-#install xcode cli tools
+echo "install xcode cli tools\n";
 xcode-select --install
 
-#install ohmyzsh
+echo "install ohmyzsh\n";
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)”;
 
-# install homebrew
+echo "install homebrew\n";
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)”;
 
-# export homebrew env var
+echo "export homebrew env var\n";
 echo "export PATH=/opt/homebrew/bin:$PATH" >> ~/.zshrc;
 source ~/.zshrc;
 
-# install nvm
+echo "install nvm\n";
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash;
 source ~/.zshrc;
 
-# nvm - install versions
+echo "nvm - install versions\n";
 nvm install lts;
 nvm install lts/erbium;
 nvm install lts/fermium;
 
-# rvm - install 
+echo "rvm - install\n";
 curl -L https://get.rvm.io | bash -s stable;
 
-# add rvm to path and source it
+echo "add rvm to path and source it\n";
 echo "export "HOME/.rvm/bin:$PATH"" >> ~/.zshrc;
 source ~/.zshrc;
 
-# export necessary flags
+echo "export necessary flags\n";
 export warnflags=-Wno-error=implicit-function-declaration;
 
-# rvm install ruby-2.6.5
+echo "rvm install ruby-2.6.5\n";
 rvm install --default 2.6.5;
 
-# install java
+echo "install java\n";
 brew install openjdk@11;
 
-#symlink system wrappers to java
+echo "symlink system wrappers to java\n";
 sudo ln -sfn /opt/homebrew/opt/openjdk@11/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-11.jdk;
 
-# export java to PATH
+echo "export java to PATH\n";
 echo 'export PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"' >> ~/.zshrc;
 
-# install apps
+echo "install apps\n";
 brew install neovim postman watchmam;
 
-# install casks
+echo "install casks\n";
 brew install --cask visual-studio-code flipper android-studio postman stats rectangle spotify slack zoom dbeaver google-chrome;
 
