@@ -44,8 +44,11 @@ sudo ln -sfn /opt/homebrew/opt/openjdk@11/libexec/openjdk.jdk /Library/Java/Java
 echo "export java to PATH\n";
 echo 'export PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"' >> ~/.zshrc;
 
+echo "tap heroky brew"
+brew tap heroku/brew;
+
 echo "install apps\n";
-brew install neovim postman watchmam;
+brew install neovim postman watchmam heroku;
 
 echo "install casks\n";
 brew install --cask visual-studio-code flipper android-studio postman stats rectangle spotify slack zoom dbeaver google-chrome;
