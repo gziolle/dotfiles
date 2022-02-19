@@ -1,13 +1,13 @@
 #!/bin/zsh
 
 echo "install xcode cli tools\n";
-xcode-select --install
+xcode-select --install;
 
 echo "install ohmyzsh\n";
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)”;
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)";
 
 echo "install homebrew\n";
-/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)”;
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)";
 
 echo "export homebrew env var\n";
 echo "export PATH=/opt/homebrew/bin:$PATH" >> ~/.zshrc;
@@ -25,11 +25,7 @@ nvm install lts/fermium;
 echo "rvm - install\n";
 curl -L https://get.rvm.io | bash -s stable;
 
-echo "add rvm to path and source it\n";
-echo "export "HOME/.rvm/bin:$PATH"" >> ~/.zshrc;
-source ~/.zshrc;
-
-echo "export necessary flags\n";
+echo "export necessary flags to install ruby\n";
 export warnflags=-Wno-error=implicit-function-declaration;
 
 echo "rvm install ruby-2.6.5\n";
@@ -44,12 +40,15 @@ sudo ln -sfn /opt/homebrew/opt/openjdk@11/libexec/openjdk.jdk /Library/Java/Java
 echo "export java to PATH\n";
 echo 'export PATH="/opt/homebrew/opt/openjdk@11/bin:$PATH"' >> ~/.zshrc;
 
-echo "tap heroky brew"
+echo "tap heroku brew"
 brew tap heroku/brew;
 
 echo "install apps\n";
-brew install neovim postman watchmam heroku;
+brew install neovim postman watchman heroku;
 
 echo "install casks\n";
-brew install --cask visual-studio-code flipper android-studio postman stats rectangle spotify slack zoom dbeaver google-chrome;
+brew install --cask visual-studio-code flipper android-studio postman stats rectangle spotify slack zoom dbeaver-community google-chrome;
 
+echo "add rvm to path and source it\n";
+echo "export "HOME/.rvm/bin:$PATH"" >> ~/.zshrc;
+source ~/.zshrc;
